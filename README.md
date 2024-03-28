@@ -18,10 +18,10 @@ To use this repository for EKS cluster management and application deployment, fo
 * Run the pipeline through Jenkins. You can trigger it manually or configure a webhook for automatic triggering on code changes.
 
 ### Pipeline Stages
-* Checkout SCM: Checks out the source code from the GitHub repository to the Jenkins workspace.
-* Initializing Terraform: Runs terraform init within the EKS directory to initialize a new or existing Terraform configuration.
-* Formatting Terraform: Executes terraform fmt to rewrite Terraform configuration files to a canonical format and style.
-* Validating Terraform: Performs terraform validate to check whether the configuration is syntactically valid and internally consistent.
-* Previewing the Infra using Terraform: Uses terraform plan to create an execution plan, showing what actions Terraform will take to change the infrastructure. Requires manual approval to proceed.
-* Creating/Destroying an EKS Cluster: Applies or destroys Terraform managed infrastructure based on the action variable which should be either apply or destroy. This stage executes without manual approval after the plan is approved.
-* Deploying Nginx Application: Configures kubectl to communicate with the created EKS cluster and applies Kubernetes configurations to deploy an Nginx application.
+* **Checkout SCM**: Checks out the source code from the GitHub repository to the Jenkins workspace.
+* **Initializing Terraform**: Runs terraform init within the EKS directory to initialize a new or existing Terraform configuration.
+* **Formatting Terraform**: Executes terraform fmt to rewrite Terraform configuration files to a canonical format and style.
+* **Validating Terraform**: Performs terraform validate to check whether the configuration is syntactically valid and internally consistent.
+* **Previewing the Infra using Terraform**: Uses terraform plan to create an execution plan, showing what actions Terraform will take to change the infrastructure. Requires manual approval to proceed.
+* **Creating/Destroying an EKS Cluster**: Applies or destroys Terraform managed infrastructure based on the action variable which should be either apply or destroy. This stage executes without manual approval after the plan is approved.
+* **Deploying Nginx Application**: Configures kubectl to communicate with the created EKS cluster and applies Kubernetes configurations to deploy an Nginx application.
